@@ -1,0 +1,10 @@
+/* to have footer pushed down */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.foot {
+  margin-top: auto;
+}
+/* ---------------------------*/
