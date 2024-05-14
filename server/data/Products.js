@@ -37,7 +37,7 @@ const products = [
     numReviews: 12,
   },
   {
-    title: "Cane Sugar Organic Strawberry Fruit Spread",
+    title: "Cane Sugar Organic Fruit Spread",
     image:
       "https://m.media-amazon.com/images/I/41npfL4d4RL._SX300_SY300_QL70_FMwebp_.jpg",
     description:
@@ -50,7 +50,7 @@ const products = [
     numReviews: 12,
   },
   {
-    title: "Old Winsconsin Premium Summer Sausage ",
+    title: "Old Premium Winsconsin Summer Sausage ",
     image: "https://m.media-amazon.com/images/I/71G54f-96UL._SX679_.jpg",
     description:
       "Made with pork raised in the USA, these non-GMO sausages have no nitrates, no nitrites, and no sugar added. They contain 100% organic pork and organic spices to fuel you well.",
@@ -63,7 +63,7 @@ const products = [
   },
 
   {
-    title: "Organic Orchard Honeycrisp Apple",
+    title: "Organic Orchard Honeycrisp Certified Apple",
     image:
       "https://m.media-amazon.com/images/I/410SjMF6ZCL._SX300_SY300_QL70_FMwebp_.jpg",
     description:
@@ -74,6 +74,32 @@ const products = [
     countInStock: 10,
     rating: 4.5,
     numReviews: 12,
+  },
+  {
+    title: "Stacking Russian 4 pieces/set Cup Toys",
+    image:
+      "https://m.media-amazon.com/images/I/718r9S+oX1L._AC_UL640_FMwebp_QL65_.jpg",
+    description:
+      "100% Safe & Soft Nesting Dolls: Each Macabaka silicone nesting doll is made of safe materials.",
+    brand: "Apple",
+    category: "Electronics",
+    price: 22.99,
+    countInStock: 9,
+    rating: 4,
+    numReviews: 8,
+  },
+  {
+    title: "Natural Amor Organic Fruity Handmade Soap",
+    image:
+      "https://m.media-amazon.com/images/I/3149IfyRcfL._SX300_SY300_QL70_FMwebp_.jpg",
+    description:
+      "100% Safe & Soft Nesting Dolls: Each Macabaka silicone nesting doll is made of safe materials.",
+    brand: "Apple",
+    category: "Electronics",
+    price: 14.99,
+    countInStock: 7,
+    rating: 5,
+    numReviews: 10,
   },
 ];
 

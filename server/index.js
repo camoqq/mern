@@ -7,15 +7,27 @@ const dotenv = require("dotenv");
 dotenv.config();
 port = process.env.PORT;
 const productRoutes = require("./Routes/productRoutes");
+const userRoutes = require("./Routes/userRoutes");
+const cookieParser = require("cookie-parser");
 
-var cors = require("cors");
-app.use(cors());
+//Body parser middleware
+// in postman under body
+app.use(express.json());
+// in postman under body/raw. you can pass json
+app.use(express.urlencoded({ extended: true }));
+// in postman under body/urlencoded. you can pass key and value
 
 connectDB();
 app.get("/", (req, res) => {
   res.send("page working");
 });
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
+// app.get("/api/products", (req, res) => {
+//   res.json(products);
+// });
+app.use(cookieParser());
+
 app.use(notFound);
 app.use(errorHandler);
 

@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const connectDB = require("./config/db");

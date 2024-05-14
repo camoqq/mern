@@ -3,7 +3,7 @@ const products = [
     // _id: "1",
     image:
       "https://m.media-amazon.com/images/I/51pER9n5PWL._SX300_SY300_QL70_FMwebp_.jpg",
-    title: "Stern's Bakery Kosher Challah Bread",
+    title: "Stern's Bakery Kosher Bread",
     description:
       "Organic bread uses at least 95 percent organic ingredients. None of it should be made from a genetically modified organism (GMO). ",
     brand: "Amazon",
@@ -71,7 +71,7 @@ const products = [
     // _id: "6",
     image:
       "https://m.media-amazon.com/images/I/410SjMF6ZCL._SX300_SY300_QL70_FMwebp_.jpg",
-    title: "Organic Orchard Honeycrisp Apple",
+    title: "Organic Orchard Honeycrisp Certified Apple",
     description:
       "Organic apples don't require extra scrubbing when eating, cooking, or baking with them. Organic apples don't poison you or the orchard workers. Organic apples are as fresh as the day they were harvested and taste better. ",
     brand: "Apple",

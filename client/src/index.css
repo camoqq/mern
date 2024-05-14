@@ -7,4 +7,10 @@
 .foot {
   margin-top: auto;
 }
+@media (max-width: 650px) {
+  .col1 {
+    margin-bottom: 20px;
+  }
+}
+
 /* ---------------------------*/
