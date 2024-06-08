@@ -8,6 +8,7 @@ dotenv.config();
 port = process.env.PORT;
 const productRoutes = require("./Routes/productRoutes");
 const userRoutes = require("./Routes/userRoutes");
+const orderRoutes = require("./Routes/orderRoutes");
 const cookieParser = require("cookie-parser");
 
 //Body parser middleware
@@ -21,12 +22,13 @@ connectDB();
 app.get("/", (req, res) => {
   res.send("page working");
 });
+app.use(cookieParser());
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/orders", orderRoutes);
 // app.get("/api/products", (req, res) => {
 //   res.json(products);
 // });
-app.use(cookieParser());
 
 app.use(notFound);
 app.use(errorHandler);

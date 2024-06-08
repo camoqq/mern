@@ -28,10 +28,15 @@ const Cart = () => {
   const removeHandler = (id) => {
     dispatch(remove(id));
   };
+  const checkoutHandler = () => {
+    navigate("/login?redirect=/shipping");
+  };
   return (
     <div className="py-3">
-      <Container>
-        <h1>Shooping Cart</h1>
+      <Container className="effect">
+        <div style={{ margin: ".7rem 0 1.7rem 0" }}>
+          <h1 style={{ fontWeight: "200" }}>Shopping Cart</h1>
+        </div>
         <Row>
           <Col md={8}>
             {cartItems.length === 0 ? (
@@ -99,7 +104,11 @@ const Cart = () => {
                   </h5>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <Button variant="success" disabled={cartItems.length === 0}>
+                  <Button
+                    variant="success"
+                    disabled={cartItems.length === 0}
+                    onClick={checkoutHandler}
+                  >
                     Proceed to Checkout
                   </Button>
                 </ListGroupItem>

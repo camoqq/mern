@@ -56,7 +56,7 @@ const Details = () => {
   };
   return (
     <div className="py-3">
-      <Container>
+      <Container className="effect">
         <h1>Details</h1>
 
         {isLoading ? (

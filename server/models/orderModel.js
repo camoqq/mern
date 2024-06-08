@@ -1,18 +1,22 @@
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema(
+  //user represents a reference of the user that selected the product
+  //and ref is the MongoDb collection is coming from
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User",
     },
+    //orderItems is an array with an object of the selected items
     orderItems: [
       {
         name: { type: String, required: true },
         qty: { type: Number, required: true },
         image: { type: String, required: true },
         price: { type: Number, required: true },
+        //product is the id of the item
         product: {
           type: mongoose.Schema.Types.ObjectId,
           required: true,

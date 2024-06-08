@@ -1,15 +1,41 @@
 import React from "react";
-import { Badge, Container, Nav, Navbar } from "react-bootstrap";
+import { Badge, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import LogoIcon from "../assets/logo.svg";
+import { useLogoutMutation } from "../slices/userApiSlice";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../slices/authSlice";
+
 const Header = () => {
   //you can bring anything from the cartslice ex:state.itemsprice
   const { cartItems } = useSelector((state) => state.cart);
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [logoutApiCall] = useLogoutMutation(); //give any name
+
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap(); //unwraps the promise
+      dispatch(logout());
+      navigate("./login");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <header>
-      <Navbar bg="success" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar
+        bg="light"
+        variant="light"
+        expand="lg"
+        collapseOnSelect
+        style={{ boxShadow: "0px 2px 5px rgb(168, 200, 168)" }}
+      >
         <Container>
           {/* use either linkcontainer or navlink */}
           <div>
@@ -19,7 +45,7 @@ const Header = () => {
               </Navbar.Brand>
             </LinkContainer>
 
-            <LinkContainer to="/">
+            <LinkContainer to="/" style={{ fontWeight: "200", color: "green" }}>
               <Navbar.Brand>ECO STORE</Navbar.Brand>
             </LinkContainer>
           </div>
@@ -27,16 +53,26 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="/cart">
-                <FaShoppingCart />
-                Cart
+                <FaShoppingCart /> Cart
                 {cartItems.length > 0 && (
                   <Badge>{cartItems.reduce((a, c) => a + c.qty, 0)}</Badge>
                 )}
               </Nav.Link>
-              <Nav.Link href="/login">
-                <FaUser />
-                Login
-              </Nav.Link>
+              {userInfo ? (
+                <NavDropdown title={userInfo.name} id="username">
+                  {console.log(userInfo)}
+                  <LinkContainer to="/profile">
+                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                  </LinkContainer>
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <Nav.Link href="/login">
+                  <FaUser /> Login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

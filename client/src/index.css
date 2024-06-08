@@ -7,10 +7,70 @@
 .foot {
   margin-top: auto;
 }
+
+/* ---------------------------*/
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translate(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px) scale(1);
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translate(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px) scale(1);
+  }
+}
+.effect {
+  animation: fade-up 0.5s;
+}
+/* ------------------------------------------------ */
+.container1 {
+  position: relative;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+}
+.card1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.2s ease;
+}
+.card1:hover {
+  transform: rotateY(360deg);
+}
+/* .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: red;
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: blue;
+  transform: rotateY(180deg);
+} */
 @media (max-width: 650px) {
   .col1 {
     margin-bottom: 20px;
   }
+  .card1:hover {
+    transform: rotateY(0deg);
+  }
+  .container1 {
+    position: relative;
+    padding: 2rem 4rem 1rem 4rem;
+  }
 }
-
-/* ---------------------------*/

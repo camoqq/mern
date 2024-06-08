@@ -1,6 +1,6 @@
 const products = [
   {
-    title: "Stern's Bakery Kosher Challah Bread",
+    title: "Stern's Two-piece Kosher Challah Bread",
     image:
       "https://m.media-amazon.com/images/I/51pER9n5PWL._SX300_SY300_QL70_FMwebp_.jpg",
     description:
@@ -25,7 +25,7 @@ const products = [
     numReviews: 8,
   },
   {
-    title: " Organic Chocolate Chip Cookie Bites",
+    title: " Organic Chocolate Chip Cookie",
     image: "https://m.media-amazon.com/images/I/41ZYUt0gjsL._SX342_SY445_.jpg",
     description:
       " It usually contains flour, sugar, egg, and some type of oil, fat, or butter. It may include other ingredients such as raisins, oats, chocolate chips, or nuts.",
@@ -37,7 +37,7 @@ const products = [
     numReviews: 12,
   },
   {
-    title: "Cane Sugar Organic Fruit Spread",
+    title: "Certified Cane Sugar Organic Fruit Spread",
     image:
       "https://m.media-amazon.com/images/I/41npfL4d4RL._SX300_SY300_QL70_FMwebp_.jpg",
     description:
@@ -63,7 +63,7 @@ const products = [
   },
 
   {
-    title: "Organic Orchard Honeycrisp Certified Apple",
+    title: "Organic Orchard Honeycrisp Apple",
     image:
       "https://m.media-amazon.com/images/I/410SjMF6ZCL._SX300_SY300_QL70_FMwebp_.jpg",
     description:
@@ -89,7 +89,7 @@ const products = [
     numReviews: 8,
   },
   {
-    title: "Natural Amor Organic Fruity Handmade Soap",
+    title: "Natural Amor Organic  Handmade Soap",
     image:
       "https://m.media-amazon.com/images/I/3149IfyRcfL._SX300_SY300_QL70_FMwebp_.jpg",
     description:

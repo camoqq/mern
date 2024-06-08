@@ -4,11 +4,11 @@ import Rating from "./Rating";
 
 const Product = ({ prod }) => {
   return (
-    <div style={{ margin: "3rem 1.5rem 0 1.5rem" }}>
+    <div className="container1">
       <Card
-        className=" p-4 "
+        className=" p-4 card1"
         style={{
-          boxShadow: "2px 2px .5px #198754",
+          boxShadow: "  1px 1px 11px 3px #a4a4a4",
         }}
       >
         <a
