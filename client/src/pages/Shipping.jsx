@@ -8,14 +8,16 @@ import CheckoutSteps from "../components/CheckoutSteps";
 
 const Shipping = () => {
   const cart = useSelector((state) => state.cart);
-  const { shippingAddr } = cart;
+  const { shippingAddress } = cart;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [address, setAddress] = useState(shippingAddr?.address || "");
-  const [city, setCity] = useState(shippingAddr?.city || "");
-  const [postalCode, setPostalCode] = useState(shippingAddr?.postalCode || "");
-  const [country, setCountry] = useState(shippingAddr?.country || "");
+  const [address, setAddress] = useState(shippingAddress?.address || "");
+  const [city, setCity] = useState(shippingAddress?.city || "");
+  const [postalCode, setPostalCode] = useState(
+    shippingAddress?.postalCode || ""
+  );
+  const [country, setCountry] = useState(shippingAddress?.country || "");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -24,10 +26,10 @@ const Shipping = () => {
   };
 
   useEffect(() => {
-    if (!shippingAddr) {
+    if (!shippingAddress) {
       navigate("/shipping");
     }
-  }, [shippingAddr, navigate]);
+  }, [shippingAddress, navigate]);
 
   return (
     <FormContainer>
@@ -72,7 +74,7 @@ const Shipping = () => {
             onChange={(e) => setCountry(e.target.value)}
           />
         </Form.Group>
-        <Button type="submit" variant="secondary" className="mt-2">
+        <Button type="submit" variant="success" className="mt-2">
           Continue
         </Button>{" "}
       </Form>

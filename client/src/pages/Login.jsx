@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FormContainer from "../components/FormContainer";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row, Spinner } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useLoginMutation } from "../slices/userApiSlice";
@@ -15,12 +15,12 @@ const Login = () => {
   const navigate = useNavigate();
 
   const [login, { isLoading }] = useLoginMutation();
-
   const { userInfo } = useSelector((state) => state.auth);
 
-  const { search } = useLocation(); // same as console.log(window.location.search);
+  const { search } = useLocation(); // SAME AS console.log(window.location.search);
   const searchParams = new URLSearchParams(search);
   const redirect = searchParams.get("redirect") || "/";
+
   useEffect(() => {
     if (userInfo) {
       // if there is userInfo in localStorage then navigate
@@ -65,7 +65,7 @@ const Login = () => {
         <Button type="submit" variant="secondary" className="mt-2">
           Sign In
         </Button>
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <Spinner />}
         <Row className="py-3">
           <Col>
             New Customer?{" "}

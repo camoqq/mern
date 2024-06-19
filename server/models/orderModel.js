@@ -12,7 +12,7 @@ const orderSchema = new mongoose.Schema(
     //orderItems is an array with an object of the selected items
     orderItems: [
       {
-        name: { type: String, required: true },
+        title: { type: String, required: true },
         qty: { type: Number, required: true },
         image: { type: String, required: true },
         price: { type: Number, required: true },

@@ -10,6 +10,7 @@ import {
   ListGroup,
   ListGroupItem,
   Row,
+  Spinner,
 } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 // import products from "../Products";
@@ -60,7 +61,7 @@ const Details = () => {
         <h1>Details</h1>
 
         {isLoading ? (
-          <div>Loading</div>
+          <Spinner />
         ) : error ? (
           <div>{error.error}</div>
         ) : (

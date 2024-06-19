@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FormContainer from "../components/FormContainer";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row, Spinner } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useRegisterMutation } from "../slices/userApiSlice";
@@ -89,7 +89,7 @@ const Register = () => {
         <Button type="submit" variant="secondary" className="mt-2">
           Register
         </Button>
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <Spinner />}
         <Row className="py-3">
           <Col>
             Already have an account?{" "}

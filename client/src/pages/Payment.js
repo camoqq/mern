@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FormContainer from "../components/FormContainer";
 import CheckoutSteps from "../components/CheckoutSteps";
 import { Button, Col, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { savePaymentMethod } from "../slices/cartSlice";
 
 const Payment = () => {
-  // const [paymentMethod, setpaymentMethod] = useState("Paypal")
+  const [paymentMethod, setPaymentMethod] = useState("Paypal");
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const cart = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    if (!cart.shippingAddress) {
+      navigate("/shipping");
+    }
+  }, [cart.shippingAddress, navigate]);
+
   const submitHandler = (e) => {
     e.preventDefault();
-    // dispatch(savePaymentMethod(paymentMethod));
+    dispatch(savePaymentMethod(paymentMethod));
     navigate("/placeorder");
   };
 
@@ -31,10 +42,10 @@ const Payment = () => {
               name="paymentMethod"
               value="PayPal"
               checked
-              // onChange={(e) => setPaymentMethod(e.target.value)}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
           </Col>
-          <Col>
+          {/* <Col>
             <Form.Check
               className="my-2"
               type="radio"
@@ -43,12 +54,12 @@ const Payment = () => {
               name="paymentMethod"
               value="Cash"
               checked
-              // onChange={(e) => setPaymentMethod(e.target.value)}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
-          </Col>
+          </Col> */}
         </Form.Group>
 
-        <Button type="submit" variant="secondary" className="mt-2">
+        <Button type="submit" variant="success" className="mt-2">
           Continue
         </Button>
       </Form>

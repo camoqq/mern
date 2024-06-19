@@ -28,6 +28,7 @@ const Cart = () => {
   const removeHandler = (id) => {
     dispatch(remove(id));
   };
+  //if we are not logged in it will redirect us to login ,otherwise it will go to shipping
   const checkoutHandler = () => {
     navigate("/login?redirect=/shipping");
   };
@@ -44,7 +45,7 @@ const Cart = () => {
             ) : (
               <ListGroup variant="flush">
                 {cartItems.map((item) => (
-                  <ListGroupItem>
+                  <ListGroupItem key={item._id}>
                     <Row>
                       <Col md={2}>
                         {/* Fluid makes it small */}

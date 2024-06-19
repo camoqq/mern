@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Col, Container, Image, Row } from "react-bootstrap";
+import { Alert, Col, Container, Image, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 // import products from "../Products";
 import Product from "../components/Product";
@@ -25,7 +25,7 @@ const Home = () => {
       <div className="py-3">
         {/* {isLoading ? () : error ? () : ()} */}
         {isLoading ? (
-          <div>Loading...</div>
+          <Spinner />
         ) : error ? (
           <Alert>{error?.data?.message || error.error}</Alert>
         ) : (

@@ -13,6 +13,8 @@ import Shipping from "./pages/Shipping";
 import PrivateRoute from "./components/PrivateRoute";
 import Payment from "./pages/Payment";
 import PlaceOrder from "./pages/PlaceOrder";
+import FinalOrder from "./pages/FinalOrder";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
@@ -26,8 +28,10 @@ const App = () => {
         <Route path="/details/:prodId" element={<Details />} />
         <Route path="" element={<PrivateRoute />}>
           <Route path="/shipping" element={<Shipping />} />
-          <Route path="/placeorder" element={<PlaceOrder />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/placeorder" element={<PlaceOrder />} />
+          <Route path="/order/:id" element={<FinalOrder />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
       <Footer />

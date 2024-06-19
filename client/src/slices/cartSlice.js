@@ -3,11 +3,7 @@ import UpdateCart from "../utils/UpdateCart";
 
 const initialState = localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
-  : { cartItems: [], shippingAddr: [], payment: [] };
-
-//   const add2decimals = (num)=>{
-//     return Math.round((num*100)/100).toFixed(2)
-//   }
+  : { cartItems: [], shippingAddress: [], payment: [] };
 
 const cartSlice = createSlice({
   name: "cart",
@@ -36,11 +32,11 @@ const cartSlice = createSlice({
       return UpdateCart(state);
     },
     saveShippingAddress: (state, action) => {
-      state.shippingAddr = action.payload;
+      state.shippingAddress = action.payload;
       return UpdateCart(state);
     },
     savePaymentMethod: (state, action) => {
-      state.payment = action.payload;
+      state.paymentMethod = action.payload;
       return UpdateCart(state);
     },
     clearCartItems: (state, action) => {
@@ -49,6 +45,12 @@ const cartSlice = createSlice({
     },
   },
 });
-export const { add, remove, saveShippingAddress, payment, clearCartItems } =
-  cartSlice.actions;
+export const {
+  add,
+  remove,
+  saveShippingAddress,
+  clearCartItems,
+  savePaymentMethod,
+} = cartSlice.actions;
+
 export default cartSlice.reducer;
