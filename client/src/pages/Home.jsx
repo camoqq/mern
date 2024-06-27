@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import products from "../Products";
 import Product from "../components/Product";
 import { useGetProductosQuery } from "../slices/productsApiSlice";
+import ProductCarousel from "../components/ProductCarousel";
 // import axios from "axios";
 
 const Home = () => {
@@ -40,14 +41,15 @@ const Home = () => {
               </a>
             </div>
             <Row className="px-4">
-              <Col lg={8} className="col1 mb-4">
-                <Image
+              <Col lg={7} className="col1 mb-4">
+                {/* <Image
                   fluid
                   rounded
                   src="https://a.storyblok.com/f/162306/6517x4345/79eb711de2/greggs-eco-shop-interior.jpg/m/1200x0/smart/filters:quality(95)"
-                />
+                /> */}
+                <ProductCarousel />
               </Col>
-              <Col lg={4}>
+              <Col lg={5}>
                 <p>
                   Eco-friendly products benefit you and the planet. They reduce
                   pollution, waste, and toxins, improving air and water quality.
@@ -63,28 +65,30 @@ const Home = () => {
           </Container>
         )}
       </div>
-      <Container>
-        <h1 style={{ fontWeight: "200", paddingTop: "2rem" }} id="prods">
-          Latest Products
-        </h1>
+      <div style={{ background: "rgb(213, 239, 215)" }}>
+        <Container>
+          <h1 style={{ fontWeight: "200", paddingTop: "2rem" }} id="prods">
+            Latest Products
+          </h1>
 
-        <Row
-          style={
-            {
-              // padding: "0 1rem 3rem 1rem",
+          <Row
+            style={
+              {
+                // padding: "0 1rem 3rem 1rem",
+              }
             }
-          }
-        >
-          {/* add optional ? to products.map if map is undefined */}
-          {products?.map((prod) => (
-            <Col lg={3} md={6} sm={12} key={prod._id}>
-              <div>
-                <Product prod={prod} />
-              </div>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+          >
+            {/* add optional ? to products.map if map is undefined */}
+            {products?.map((prod) => (
+              <Col lg={3} md={6} sm={12} key={prod._id}>
+                <div>
+                  <Product prod={prod} />
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
     </>
 
     // <div className="py-3">

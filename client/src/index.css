@@ -7,6 +7,15 @@
 .foot {
   margin-top: auto;
 }
+.carousel {
+  border: 0.5px solid black;
+  border-radius: 2px;
+  background-color: rgb(19, 82, 19);
+  /* filter: invert(1); */
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+}
 
 /* ---------------------------*/
 @keyframes fade-down {

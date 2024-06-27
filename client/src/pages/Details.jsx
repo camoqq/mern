@@ -58,7 +58,7 @@ const Details = () => {
   return (
     <div className="py-3">
       <Container className="effect">
-        <h1>Details</h1>
+        <h1 style={{ fontWeight: "200" }}>Details</h1>
 
         {isLoading ? (
           <Spinner />

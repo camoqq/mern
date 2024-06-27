@@ -65,7 +65,7 @@ const PlaceOrder = () => {
             <Col md={8}>
               <ListGroup variant="flush">
                 <ListGroupItem>
-                  <h3 style={{ fontWeight: "350" }}>Shipping</h3>
+                  <h3 style={{ fontWeight: "350" }}> Shipping</h3>
                   <p>
                     <strong>Address:</strong>&nbsp;
                     {cart.shippingAddress?.address}, {cart.shippingAddress.city}

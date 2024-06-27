@@ -86,7 +86,7 @@ const Register = () => {
             onChange={(e) => setconfirmpassword(e.target.value)}
           />
         </Form.Group>
-        <Button type="submit" variant="secondary" className="mt-2">
+        <Button type="submit" variant="success" className="mt-2">
           Register
         </Button>
         {isLoading && <Spinner />}

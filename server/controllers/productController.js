@@ -5,7 +5,10 @@ const Product = require("../models/productModel");
 //@description   Fetch all products
 //@route         GET/api/products
 //@access        Public
-
+const getProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({});
+  res.json(products);
+});
 // router.get(              this used to be in product routes
 //   "/",
 //   asyncHandler(async (req, res) => {
@@ -13,10 +16,6 @@ const Product = require("../models/productModel");
 //     res.json(products);
 //   })
 // );
-const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({});
-  res.json(products);
-});
 
 //@description   Fetch prod by ID
 //@route         GET/api/products
@@ -27,4 +26,12 @@ const getProdById = asyncHandler(async (req, res) => {
   res.json(singleProd);
 });
 
-module.exports = { getProducts, getProdById };
+//@description   Get top rated products
+//@route         GET/api/products/top
+//@access        Public
+const getTopProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({}).sort({ rating: -1 }).limit(3);
+  res.status(200).json(products);
+});
+
+module.exports = { getProducts, getProdById, getTopProducts };

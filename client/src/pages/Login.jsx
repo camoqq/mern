@@ -62,7 +62,7 @@ const Login = () => {
             onChange={(e) => setpassword(e.target.value)}
           />
         </Form.Group>
-        <Button type="submit" variant="secondary" className="mt-2">
+        <Button type="submit" variant="success" className="mt-2">
           Sign In
         </Button>
         {isLoading && <Spinner />}

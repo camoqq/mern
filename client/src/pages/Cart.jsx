@@ -94,7 +94,7 @@ const Cart = () => {
             <Card className="p-2">
               <ListGroup variant="flush">
                 <ListGroupItem>
-                  <h2>
+                  <h2 style={{ fontWeight: "200" }}>
                     Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)}) Items
                   </h2>
                   <h5>

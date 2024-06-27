@@ -13,7 +13,7 @@ import Shipping from "./pages/Shipping";
 import PrivateRoute from "./components/PrivateRoute";
 import Payment from "./pages/Payment";
 import PlaceOrder from "./pages/PlaceOrder";
-import FinalOrder from "./pages/FinalOrder";
+import FinalOrder from "./pages/Order";
 import Profile from "./pages/Profile";
 
 const App = () => {
