@@ -58,7 +58,7 @@ const Profile = () => {
 
   //myorders
   const { data: orders, isLoading, error } = useGetMyOrdersQuery();
-  console.log(orders?.isDelivered);
+  // console.log(orders?.isDelivered);
 
   return (
     <Container className="pt-3 effect">

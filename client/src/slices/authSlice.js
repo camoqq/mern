@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  // if there is local storage then use it and parse it to javascript then otherwise use null
   userInfo: localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))
     : null,
@@ -17,10 +16,13 @@ const authSlice = createSlice({
     },
     logout: (state, action) => {
       state.userInfo = null;
-      localStorage.removeItem("userInfo");
+      // NOTE: here we need to also remove the cart from storage so the next
+      // logged in user doesn't inherit the previous users cart and shipping
+      localStorage.clear();
     },
   },
 });
 
 export const { setCredentials, logout } = authSlice.actions;
+
 export default authSlice.reducer;

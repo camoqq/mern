@@ -121,7 +121,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
     //only do it if you are updating the password
     if (req.body.password) {
-      user.password = req.user.password;
+      user.password = req.body.password;
     }
     const updated = await user.save();
     res.status(200).json({

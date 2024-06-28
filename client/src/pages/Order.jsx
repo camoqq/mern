@@ -122,13 +122,13 @@ const Order = () => {
                   <ListGroupItem>
                     <Row>
                       <Col>Tax</Col>
-                      <Col>${order.taxPrice}</Col>
+                      <Col>${order.taxPrice.toFixed(2)}</Col>
                     </Row>
                   </ListGroupItem>
                   <ListGroupItem>
                     <Row>
                       <Col>Total</Col>
-                      <Col>${order.totalPrice}</Col>
+                      <Col>${order.totalPrice.toFixed(2)}</Col>
                     </Row>
                   </ListGroupItem>
                 </ListGroup>

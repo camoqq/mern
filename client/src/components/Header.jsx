@@ -7,6 +7,7 @@ import LogoIcon from "../assets/logo.svg";
 import { useLogoutMutation } from "../slices/userApiSlice";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../slices/authSlice";
+import { resetCart } from "../slices/cartSlice";
 
 const Header = () => {
   //you can bring anything from the cartslice ex:state.itemsprice
@@ -21,6 +22,9 @@ const Header = () => {
     try {
       await logoutApiCall().unwrap(); //unwraps the promise
       dispatch(logout());
+      // NOTE: here we need to reset cart state for when a user logs out so the next
+      // user doesn't inherit the previous users cart and shipping
+      dispatch(resetCart());
       navigate("./login");
     } catch (err) {
       console.log(err);
