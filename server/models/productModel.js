@@ -25,6 +25,7 @@ const reviewSchema = mongoose.Schema({
 const productSchema = new mongoose.Schema(
   {
     user: {
+      //which user added the product
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User", //what collection is coming from. ex:"User"

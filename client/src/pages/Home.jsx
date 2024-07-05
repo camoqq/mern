@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Product from "../components/Product";
 import { useGetProductosQuery } from "../slices/productsApiSlice";
 import ProductCarousel from "../components/ProductCarousel";
-// import axios from "axios";
 
 const Home = () => {
   const { data: products, isLoading, error } = useGetProductosQuery();
@@ -41,12 +40,7 @@ const Home = () => {
               </a>
             </div>
             <Row className="px-4">
-              <Col lg={7} className="col1 mb-4">
-                {/* <Image
-                  fluid
-                  rounded
-                  src="https://a.storyblok.com/f/162306/6517x4345/79eb711de2/greggs-eco-shop-interior.jpg/m/1200x0/smart/filters:quality(95)"
-                /> */}
+              <Col lg={7} className="col1 mb-5">
                 <ProductCarousel />
               </Col>
               <Col lg={5}>
@@ -65,7 +59,7 @@ const Home = () => {
           </Container>
         )}
       </div>
-      <div style={{ background: "rgb(213, 239, 215)" }}>
+      <div style={{ background: "rgb(213, 239, 215)", paddingBottom: "2rem" }}>
         <Container>
           <h1 style={{ fontWeight: "200", paddingTop: "2rem" }} id="prods">
             Latest Products

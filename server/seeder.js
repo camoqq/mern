@@ -19,7 +19,7 @@ const importData = async () => {
     const createdUsers = await User.insertMany(users);
     const adminUser = createdUsers[0]._id;
     const sampleProducts = products.map((prod) => {
-      return { ...prod, user: adminUser };
+      return { ...prod, user: adminUser }; //adds the admin id to the product object
     });
 
     await Product.insertMany(sampleProducts);
@@ -52,6 +52,9 @@ if (process.argv[2] === "-d") {
   importData();
 }
 
-// console.log(process.argv[1]);
-// node server/seeder -d
+// console.log(process.argv); and comment out everything in this file
+// console.log(process.argv[0]); path in node
+// console.log(process.argv[1]); path in node
+// console.log(process.argv[2]); is whatever you pass when you run
+//                               node server/seeder
 //create scrypt in package.json for it

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const userSchema = mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -26,7 +26,7 @@ const userSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-
+// -----------------------------------------------------------
 //PASSWORD VALIDATION
 //matchPassword is a name a made up for the function
 // Match user entered password to hashed password in database
@@ -43,6 +43,7 @@ userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
+// ---------------------------------------------------------------
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;

@@ -1,3 +1,4 @@
+// const path = require("path");
 const express = require("express");
 const app = express();
 // const products = require("./data/Products");
@@ -10,6 +11,8 @@ const productRoutes = require("./Routes/productRoutes");
 const userRoutes = require("./Routes/userRoutes");
 const orderRoutes = require("./Routes/orderRoutes");
 const cookieParser = require("cookie-parser");
+const productstest = require("./data/dummydata");
+const testRoute = require("./Routes/testRoute");
 
 //Body parser middleware
 // in postman under body
@@ -22,12 +25,19 @@ connectDB();
 app.get("/", (req, res) => {
   res.send("page working");
 });
+
 app.use(cookieParser());
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
 // app.get("/api/products", (req, res) => {
 //   res.json(products);
+// });
+// ------------------------------------------------------
+// app.use("/api/test", testRoute);
+// app.get("/api/test/:id", (req, res) => {
+//   const idprod = productstest.find((x) => x._id === x.params.id);
+//   res.json(productstest);
 // });
 
 app.use(notFound);

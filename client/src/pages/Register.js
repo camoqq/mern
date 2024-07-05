@@ -95,7 +95,7 @@ const Register = () => {
             Already have an account?{" "}
             <Link
               to={redirect ? `/login?redirect=${redirect}` : "/login"}
-              style={{ color: "black" }}
+              style={{ textDecoration: "none" }}
             >
               Login
             </Link>

@@ -71,7 +71,7 @@ const Login = () => {
             New Customer?{" "}
             <Link
               to={redirect ? `/register?redirect=${redirect}` : "/register"}
-              style={{ color: "black" }}
+              style={{ textDecoration: "none" }}
             >
               Register
             </Link>
