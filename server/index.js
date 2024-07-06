@@ -1,4 +1,4 @@
-// const path = require("path");
+const path = require("path");
 const express = require("express");
 const app = express();
 // const products = require("./data/Products");
@@ -22,9 +22,6 @@ app.use(express.urlencoded({ extended: true }));
 // in postman under body/urlencoded. you can pass key and value
 
 connectDB();
-app.get("/", (req, res) => {
-  res.send("page working");
-});
 
 app.use(cookieParser());
 app.use("/api/products", productRoutes);
@@ -39,6 +36,23 @@ app.use("/api/orders", orderRoutes);
 //   const idprod = productstest.find((x) => x._id === x.params.id);
 //   res.json(productstest);
 // });
+// -------------------------------------------------------
+
+// const __dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  app.use(express.static(path.join(__dirname, "/client/build")));
+
+  //any route that is not Papi will be redirected  to index.html
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("page working");
+  });
+}
 
 app.use(notFound);
 app.use(errorHandler);
