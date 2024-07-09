@@ -11,8 +11,6 @@ const productRoutes = require("./Routes/productRoutes");
 const userRoutes = require("./Routes/userRoutes");
 const orderRoutes = require("./Routes/orderRoutes");
 const cookieParser = require("cookie-parser");
-const productstest = require("./data/dummydata");
-const testRoute = require("./Routes/testRoute");
 
 //Body parser middleware
 // in postman under body
@@ -38,13 +36,11 @@ app.use("/api/orders", orderRoutes);
 // });
 // -------------------------------------------------------
 
-// const __dirname = path.resolve();
-console.log("p--" + path.resolve());
 if (process.env.NODE_ENV === "production") {
-  // const __dirname = path.resolve();
+  const __dirname = path.resolve();
   // console.log("p--" + __dirname);
   //set static folder
-  app.use(express.static(path.join(path.resolve(), "/client/build")));
+  app.use(express.static(path.join(__dirname, "/client/build")));
 
   //any route that is not api will be redirected  to index.html
   app.get("*", (req, res) =>

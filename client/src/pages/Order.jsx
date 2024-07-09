@@ -53,16 +53,15 @@ const Order = () => {
                     {order.shippingAddress.postalCode},{" "}
                     {order.shippingAddress.country}
                   </p>
-                  <p>
-                    {/* {order.isDelivered ? (
+
+                  {/* {order.isDelivered ? (
                       <Alert variant="sucess">
                         Delivered on {order.deliveredAt}
                       </Alert>
                     ) : (
                       <Alert variant="danger">Not Delivered</Alert>
                     )} */}
-                    <Alert variant="primary">Delivered</Alert>
-                  </p>
+                  <Alert variant="primary">Delivered</Alert>
                 </ListGroupItem>
                 <ListGroupItem>
                   <h2>Payment Method</h2>

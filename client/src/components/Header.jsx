@@ -13,7 +13,7 @@ const Header = () => {
   //you can bring anything from the cartslice ex:state.itemsprice
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
-  // console.log(userInfo)
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [logoutApiCall] = useLogoutMutation(); //give any name
