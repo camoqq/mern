@@ -13,7 +13,6 @@ import {
   Spinner,
 } from "react-bootstrap";
 import { useGetMyOrdersQuery } from "../slices/ordersApiSlice";
-import { FaTimes } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
 
 const Profile = () => {
@@ -56,7 +55,7 @@ const Profile = () => {
     }
   };
 
-  const { data: orders, isLoading, error } = useGetMyOrdersQuery(userInfo._id);
+  const { data: orders, isLoading } = useGetMyOrdersQuery(userInfo._id);
 
   return (
     <Container className="pt-3 effect">

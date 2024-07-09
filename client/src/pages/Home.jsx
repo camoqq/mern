@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Alert, Col, Container, Image, Row, Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Alert, Col, Container, Row, Spinner } from "react-bootstrap";
 // import products from "../Products";
 import Product from "../components/Product";
 import { useGetProductosQuery } from "../slices/productsApiSlice";

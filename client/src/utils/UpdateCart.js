@@ -1,5 +1,3 @@
-import React from "react";
-
 const UpdateCart = (state) => {
   //calculate items price
   state.itemsPrice = state.cartItems.reduce(
