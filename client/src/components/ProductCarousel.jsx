@@ -13,7 +13,7 @@ const ProductCarousel = () => {
     <Carousel pause="hover" className="carousel">
       {data.map((x) => (
         <Carousel.Item key={x._id}>
-          <Link to={`/products/${x._id}`}>
+          <Link to={`/details/${x._id}`}>
             <Image src={x.image} fluid />
             <Carousel.Caption className="carousel-caption">
               <h4>{x.title}</h4>

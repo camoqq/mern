@@ -3,7 +3,7 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const Rating = ({ value }) => {
   return (
-    <div>
+    <>
       {value >= 1 ? (
         <FaStar />
       ) : value >= 0.5 ? (
@@ -39,7 +39,7 @@ const Rating = ({ value }) => {
       ) : (
         <FaRegStar />
       )}
-    </div>
+    </>
   );
 };
 

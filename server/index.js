@@ -39,14 +39,16 @@ app.use("/api/orders", orderRoutes);
 // -------------------------------------------------------
 
 // const __dirname = path.resolve();
-
+console.log("p--" + path.resolve());
 if (process.env.NODE_ENV === "production") {
+  // const __dirname = path.resolve();
+  // console.log("p--" + __dirname);
   //set static folder
-  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.use(express.static(path.join(path.resolve(), "/client/build")));
 
-  //any route that is not Papi will be redirected  to index.html
+  //any route that is not api will be redirected  to index.html
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+    res.sendFile(path.resolve(path.resolve(), "client", "build", "index.html"))
   );
 } else {
   app.get("/", (req, res) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useGetOrderDetailsQuery } from "../slices/ordersApiSlice";
 import {
   Alert,
@@ -9,7 +9,6 @@ import {
   ListGroup,
   ListGroupItem,
   Row,
-  Loader,
   Spinner,
   Container,
 } from "react-bootstrap";
@@ -19,11 +18,11 @@ const Order = () => {
 
   const {
     data: order,
-    refetch,
+    // refetch,
     isLoading,
     isError,
   } = useGetOrderDetailsQuery(orderId);
-  console.log(order);
+  // console.log(order);
 
   return (
     <Container className="pt-3 effect">
@@ -81,7 +80,7 @@ const Order = () => {
                 <ListGroupItem>
                   <h2>Order Items</h2>
                   {order.orderItems.map((item, index) => (
-                    <ListGroupItem>
+                    <ListGroupItem key={item._id}>
                       <Row>
                         <Col m={1}>
                           <Image
@@ -143,8 +142,6 @@ const Order = () => {
       )}
     </Container>
   );
-  {
-  }
 };
 
 export default Order;

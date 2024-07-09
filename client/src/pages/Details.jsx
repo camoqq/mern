@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Alert,
   Button,
   Card,
   Col,
@@ -15,7 +14,6 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 // import products from "../Products";
 import Rating from "../components/Rating";
-import axios from "axios";
 import { useGetProductDetailsQuery } from "../slices/productsApiSlice";
 import { add } from "../slices/cartSlice";
 import { useDispatch } from "react-redux";
@@ -96,7 +94,7 @@ const Details = () => {
                       <Row>
                         <Col>Quantity:</Col>
                         <Col>
-                          {console.log([...Array(item?.countInStock).keys()])}
+                          {/* {console.log([...Array(item?.countInStock).keys()])} */}
                           <FormControl
                             as="select"
                             value={qty}

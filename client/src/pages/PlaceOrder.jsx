@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Form, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CheckoutSteps from "../components/CheckoutSteps";
 import {
   Alert,
@@ -30,9 +30,9 @@ const PlaceOrder = () => {
     }
   }, [cart.shippingAddress?.address, cart.paymentMethod, navigate]);
 
-  console.log(cart);
+  // console.log(cart);
 
-  const [createOrder, { isLoading, error }] = useCreateOrderMutation();
+  const [createOrder, { error }] = useCreateOrderMutation();
 
   const placeOrderHandler = async () => {
     try {
@@ -80,7 +80,7 @@ const PlaceOrder = () => {
                     {cart.paymentMethod}
                   </p>
                 </ListGroupItem>
-                {console.log(cart)}
+                {/* {console.log(cart)} */}
                 <ListGroupItem>
                   <h3 style={{ fontWeight: "350" }}>Order Items</h3>
                   {cart.orderItems === 0 ? (
@@ -88,7 +88,7 @@ const PlaceOrder = () => {
                   ) : (
                     <ListGroup variant="flush">
                       {cart.cartItems.map((item, index) => (
-                        <ListGroupItem>
+                        <ListGroupItem key={item._id}>
                           <Row>
                             <Col md={1}>
                               <Image
